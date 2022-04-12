@@ -29,6 +29,10 @@
 	width:100%;
 }
 
+#wrapper span {
+	text-transform: capitalize;
+}
+
 /*End wrapper*/
 
 
