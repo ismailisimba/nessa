@@ -29,8 +29,20 @@
 	width:100%;
 }
 
-#wrapper span {
-	text-transform: capitalize;
+#spanOne {
+	text-transform:lowercase;
+	position: absolute;
+	font-weight: 500;
+	font-size: 14px;
+	top:22px;
+	left: -3px;
+
+	display: flex;
+	flex-flow: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+
 }
 
 /*End wrapper*/
@@ -61,7 +73,7 @@ header{
 
 
 .logo{
-	 margin: 26px 0 20px 0;
+	 margin: 20px 0 20px 0;
 }
 
 
@@ -75,7 +87,8 @@ header{
 
 
 .logo h1:after {
-    border-bottom: 4px solid #111111;
+    /*border-bottom: 4px solid #111111;*/
+	border-bottom: none;
     content: "";
     display: block;
     position: absolute;
