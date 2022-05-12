@@ -921,6 +921,32 @@ form.respondF {
 	
 	
 }
+
+/*Custom Rules*/
+.custom1{
+	text-align: left;
+}
+
+.custom2{
+	text-align: left;
+	list-style: circle;
+	color:#111111;
+	margin-left: 16px;
+}
+
+.custom3{
+	float:unset !important;
+}
+
+.custom4{
+	background-image: url("images/mom_ico.png");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: block;
+	width: 25px;
+	height: 25px;
+}
 	
 	
 	
