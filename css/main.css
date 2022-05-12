@@ -939,16 +939,30 @@ form.respondF {
 }
 
 .custom4{
-	background-image: url("images/mom_ico.png");
+	background-image: url("../images/mom_ico.webp");
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 	display: block;
 	width: 25px;
 	height: 25px;
+
+	position: absolute;
+	top: -28px;
+	margin: 0 auto;
+	left: 49%;
 }
 	
 	
 	
 	
 	
+
+/*custom queries*/
+
+@media only screen and (max-width: 767px)
+{
+    .custom4 {
+		top: 52px;
+	}
+}
