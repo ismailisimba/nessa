@@ -74,7 +74,7 @@ $('.clientList a').css({opacity:0.5});
 //---------------------------------- Form validation-----------------------------------------//
 
 
-
+/*
 
 $('#submit').click(function(){ 
 
@@ -113,7 +113,7 @@ $('#submit').click(function(){
 
 	var data_string = $('.contactForm form').serialize(); 
 	var data_string2 = $('.contactForm form').serializeArray(); 
-	
+	var myurl = ""+"?paraOne=nessacomoestas";
 
 	$.ajax({
 		type: "POST",
@@ -136,7 +136,7 @@ $('#submit').click(function(){
 	return false; 
 });
 
-
+*/
 
 //---------------------------------- End form validation-----------------------------------------//
 
