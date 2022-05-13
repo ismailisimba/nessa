@@ -112,6 +112,7 @@ $('#submit').click(function(){
 	}
 
 	var data_string = $('.contactForm form').serialize(); 
+	var data_string2 = $('.contactForm form').serializeArray(); 
 	
 
 	$.ajax({
