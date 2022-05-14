@@ -1,21 +1,40 @@
-const form = document.getElementById("submit");
+const submitButt = document.getElementById("submit");
 addEveListeners();
 
 function addEveListeners(){
- form.addEventListener("click",sendEmails,true);
+    submitButt.addEventListener("click",sendEmails,true);
 }
 
 
-function readForm(){
-    const myobj = {};
+function readForm(data){
+    const myobj = data;
+    myobj.params[0].dataObj.name = document.getElementById("name").value;
+    myobj.params[0].dataObj.email = document.getElementById("email").value;
+    myobj.params[0].dataObj.subject = document.getElementById("subject").value;
+    myobj.params[0].dataObj.message = document.getElementById("message").value;
+
+    const validateEmail = ()=>{
+        return String(myobj.params[0].dataObj.email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+      };
+
+      console.log(validateEmail());
     return myobj;
+}
+
+
+function myLog(val){
+  alert("Your Email Has Been Sent!");
+  window.location.reload();
 }
 
 
 
 async function sendEmails (){
 const reqString = "https://script.google.com/macros/s/AKfycbw39czh1LjMDSNlVJjUueIwwLMSfzfyBMrzmEPaPeqXfs3UzCDdKSDqtFds7fhA_IPQ/exec?paraOne=nessacomoestas";
-const formData = readForm();
 var data = {
     "params": [
         {
@@ -24,12 +43,14 @@ var data = {
             "token": "letMeIn",
             "dataObj": {"name":"Kil",
                         "email":"Roy",
-                        "message":"WasHere!",}
+                        "message":"WasHere!",
+                    "subject":"Vibes n Inshallah!"}
         }
     ]
 }
+ data = readForm(data);
 
-console.log(form);
+
 
 
 data = JSON.stringify(data);
@@ -65,7 +86,7 @@ data = JSON.stringify(data);
           
           var cloudObject = JSON.parse(myBlob);
           
-        
+          myLog(cloudObject);
           return cloudObject;
           
         })
@@ -73,7 +94,7 @@ data = JSON.stringify(data);
           console.log(error.message);
         });
 
-      
+        
        // document.querySelectorAll(".mycolumns")[1].innerHTML = returnVal;
         return returnVal; 
 
