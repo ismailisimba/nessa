@@ -224,6 +224,17 @@ nav#mainNav a.active:after {
     text-align: center;
     width: 100%;
 	text-transform: uppercase;
+	display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caption h1{
+	background-color: #ffffff;
+	opacity: .84;
+	padding: 3px 6px;
+	box-sizing: border-box;
 }
 
 .caption h1{
@@ -241,7 +252,7 @@ nav#mainNav a.active:after {
     display: block;
     position: absolute;
     right: 4px;
-    top: 33px;
+    top: 26px;
     width: 19px;
     z-index: 0;
 }
@@ -819,7 +830,7 @@ form.respondF {
 	
 	 .mainSlider.flexslider{margin:73px auto 0;}
 	.caption h1{font-size:20px;}
-	.caption h1 span.new:after{width:17px;top:26px;right:2px;}
+	.caption h1 span.new:after{width:17px;top:12px;right:2px;}
 	.mainSlider .flex-direction-nav a{top:55% !important;}
 	
 	
@@ -879,8 +890,8 @@ form.respondF {
 	.mobileBtn{display: inline-block;float: right;margin-right: 5px;margin-top: -51px;position: relative;}
 	
 	 .mainSlider.flexslider{margin:73px auto 0;}
-	.caption h1{font-size:20px;}
-	.caption h1 span.new:after{width:17px;top:26px;right:2px;}
+	.caption h1{font-size:16px;}
+	.caption h1 span.new:after{width:17px;top:18px;right:2px;}
 	.mainSlider .flex-direction-nav a{top:80% !important;}
 	.projectSlider .flex-direction-nav a{top:60% !important;}
 	
@@ -937,6 +948,14 @@ form.respondF {
 
 .custom3{
 	float:unset !important;
+
+}
+
+.custom69{
+	display: flex;
+	flex-flow: column;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .custom4{
@@ -953,7 +972,21 @@ form.respondF {
 	margin: 0 auto;
 	left: 49%;
 }
-	
+
+.custom5{
+	background-image: url("../images/kili_ico.webp");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: block;
+	width: 25px;
+	height: 25px;
+
+	position: absolute;
+	top: -28px;
+	margin: 0 auto;
+	left: 49%;
+}
 	
 	
 	
@@ -963,7 +996,5 @@ form.respondF {
 
 @media only screen and (max-width: 767px)
 {
-    .custom4 {
-		top: 52px;
-	}
+    
 }
