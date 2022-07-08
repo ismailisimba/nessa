@@ -957,6 +957,13 @@ form.respondF {
 	justify-content: space-evenly;
 	align-items: center;
 }
+.custom691{
+	display: block;
+	position: relative;
+	margin-bottom: 36px;
+	left: 25%;
+	width: 50%;
+}
 
 .custom4{
 	background-image: url("../images/mom_ico.webp");
@@ -996,5 +1003,11 @@ form.respondF {
 
 @media only screen and (max-width: 767px)
 {
-    
+    .custom691{
+		display: block;
+		position: relative;
+		margin-bottom: 36px;
+		left: 0px;
+		width: 100%;
+	}
 }
