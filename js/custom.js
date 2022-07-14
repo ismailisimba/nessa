@@ -1,8 +1,24 @@
 const submitButt = document.getElementById("submit");
+const TMP = {};
+TMP["customLoad1"] = document.getElementById("loadanime");
 addEveListeners();
 
 function addEveListeners(){
-    submitButt.addEventListener("click",sendEmails,true);
+    submitButt.addEventListener("click",()=>{
+      readForm({
+        "params": [
+            {
+                "initVal": "initKey",
+                "action": "login",
+                "token": "letMeIn",
+                "dataObj": {"name":"Kil",
+                            "email":"Roy",
+                            "message":"WasHere!",
+                        "subject":"Vibes n Inshallah!"}
+            }
+        ]
+      })
+    },true);
 }
 
 
@@ -21,8 +37,13 @@ function readForm(data){
           );
       };
 
-      console.log(validateEmail());
-    return myobj;
+      if(validateEmail&&myobj.params[0].dataObj.message.length>1){
+        startAnimation();
+        sendEmails(myobj);
+      }else{
+        alert("please enter an email and a message!");
+        window.location.reload();
+      };
 }
 
 
@@ -33,25 +54,8 @@ function myLog(val){
 
 
 
-async function sendEmails (){
+async function sendEmails (data){
 const reqString = "https://script.google.com/macros/s/AKfycbw39czh1LjMDSNlVJjUueIwwLMSfzfyBMrzmEPaPeqXfs3UzCDdKSDqtFds7fhA_IPQ/exec?paraOne=nessacomoestas";
-var data = {
-    "params": [
-        {
-            "initVal": "initKey",
-            "action": "login",
-            "token": "letMeIn",
-            "dataObj": {"name":"Kil",
-                        "email":"Roy",
-                        "message":"WasHere!",
-                    "subject":"Vibes n Inshallah!"}
-        }
-    ]
-}
- data = readForm(data);
-
-
-
 
 data = JSON.stringify(data);
     
@@ -85,8 +89,7 @@ data = JSON.stringify(data);
         .then(function(myBlob) {
           
           var cloudObject = JSON.parse(myBlob);
-          
-          myLog(cloudObject);
+          stopAnimation().then(myLog(cloudObject));
           return cloudObject;
           
         })
@@ -100,3 +103,15 @@ data = JSON.stringify(data);
 
     // tempDiv.innerHTML = Object.entries(localVar.values)[0][1][3] ;  
 }
+
+function  startAnimation(){
+  TMP["html"] = document.getElementById("wrapper");
+  TMP.customLoad1.style.visibility = "visible";
+  TMP.html.replaceWith(TMP.customLoad1);
+};
+
+
+async  function  stopAnimation(){
+  TMP.customLoad1.style.visibility = "collapse";
+  TMP.customLoad1.replaceWith(TMP.html);
+};

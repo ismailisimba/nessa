@@ -994,6 +994,81 @@ form.respondF {
 	margin: 0 auto;
 	left: 49%;
 }
+
+.custom19{
+	padding-top: 12px;
+	margin-bottom: 12px;
+	box-sizing: border-box;
+}
+
+.loadanime{
+    
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#loadanime{
+	position: absolute;
+	top: 40%;
+	left: 22%;
+	box-sizing: border-box;
+    width: 56% !important;
+    visibility: collapse;
+    margin: 12px auto;
+  
+  }
+
+  .dots{
+    position: relative;
+    margin-top: 6px;
+    top: -6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: black;
+    animation: wobbleMeDots 1.9s linear 0s infinite forwards ;
+  }
+
+  #spOne {
+    animation-delay: 0.9s;
+  }
+
+  #spTwo {
+    animation-delay: 1.8s;
+  }
+
+  #spThree {
+    animation-delay: 2.7s;
+  }
+
+  @keyframes wobbleMeDots {
+
+    0%{
+        top: -6px;
+    }
+
+    50%{
+
+      top: 12px;
+      
+    }
+
+    100%{
+
+      top: -6px;
+
+    }
+    
+  }
+
+.loadanime span {
+    font-size: 48px;
+    
+    font-weight: 600;
+}
 	
 	
 	
